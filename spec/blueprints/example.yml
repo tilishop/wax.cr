@@ -1,0 +1,20 @@
+transform:
+  angle: abs
+  url:
+    append: .html
+  title:
+  - downcase
+  - capitalize
+  up: ceil
+  price:
+  - default: 12.99
+variables:
+  year:
+    created_at:
+      date: '%Y'
+  half_price:
+    price:
+    - divided_by: 2
+    - times: 3.5
+  lower_title:
+    title: downcase

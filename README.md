@@ -9,8 +9,8 @@ blueprints. End-users can then mould their data, create variables and include
 additional data, before it's sent to Moustache.
 
 Despite its purpose, Wax isn't bound to Moustache at all. It can be
-used with any templating language. All it needs is JSON, a `Hash` or an object 
-responding to `.to_h`. It will return a new `Hash` with the transformed data.
+used with any templating language. All it needs is a `Hash`, `JSON`, `YAML` or a
+file. It will return a new `Hash` with the transformed data.
 
 ## Installation
 
@@ -31,6 +31,28 @@ require "wax"
 ```
 
 DISCLAIMER: This shard is under heavy development, and nowhere near ready.
+
+## Arguments for Moustache
+Moustache has several benefits over Liquid. To name a few:
+- it's easier to understand for end users
+- it separates logic from templates
+- it's fast (up to 30x faster)
+
+Liquid templates can get messy. 
+
+### Speed
+When it comes to speed, Moustache is the clear winner.
+
+#### Simple *Hello world!* example
+```
+          Hello world: Crustache render   1.24M (808.71ns) (± 8.50%)    624B/op      fastest
+Hello world: Crustache parse and render 465.34k (  2.15µs) (± 9.12%)  1.51kB/op 2.66× slower
+
+             Hello world: Liquid render  83.62k ( 11.96µs) (±14.42%)  2.34kB/op      fastest
+   Hello world: Liquid parse and render  16.24k ( 61.59µs) (±18.96%)  10.0kB/op 5.15× slower
+```
+
+TODO: Add benchmarks with Mustache + Wax vs Liquid with filters
 
 ## Contributing
 
