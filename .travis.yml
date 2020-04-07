@@ -1,6 +1,17 @@
-language: crystal
+# language: crystal
 
-# Uncomment the following if you'd like Travis to run specs and check code formatting
+# crystal:
+#   - latest
+#   - nightly
+
+# matrix:
+#   allow_failures:
+#     - crystal: nightly
+
+# install:
+#   - shards install
+
 # script:
 #   - crystal spec
-#   - crystal tool format --check
+#   - crystal tool format --check src spec
+#   - bin/ameba src

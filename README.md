@@ -1,4 +1,4 @@
-# Data pre-processor for Moustache templates
+# Data moulder for Moustache templates
 
 Moustache templates are logicless, so data needs to be shaped before it is used.
 This makes it hard to use Moustache as an end-user templating language, since
