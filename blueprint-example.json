@@ -1,0 +1,27 @@
+{ 
+  // Example data:
+  // "data": {
+  //   "angle":      -17,
+  //   "url":        "/my/fancy/url",
+  //   "title":      "some title",
+  //   "up":         1.2,
+  //   "created_at": 2020-04-07 15:31:21
+  // },
+  "include":        ["site", "products", "next", "previous"],
+  "transform": {
+    "angle":        ["abs"],                  // => 17
+    "url":          [{"append": ".html"}],    // => "/my/fancy/url.html"
+    "title":        ["capitalize"],           // => "Some title"
+    "up":           ["ceil"],                 // => 2
+    "price":        [{"default": 12.99}]      
+  },
+  "variables": {
+    "labels":       {"products": [{"map": "label"}]},
+    "tags":         {"products": [{"map": "tag"}, "compact", {"map": "capitalize"}]},
+    "taggings":     {"tags": [{"concat": "labels"}]},
+    "full_url":     {"url": [{"append": ".html"}]},
+    "year":         {"created_at": [{"date": "%Y"}]},
+    "half_price":   {"price": [{"divided_by": 2}]},
+    "lower_title":  {"title": ["downcase"]}
+  }
+}

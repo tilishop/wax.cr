@@ -1,0 +1,9 @@
+name: wax
+version: 0.1.0
+
+authors:
+  - wout <wout@mick-wout.com>
+
+crystal: 0.33.0
+
+license: MIT

@@ -1,0 +1,38 @@
+---
+include:
+  - site
+  - products
+  - next
+  - previous
+transform:
+  angle:
+    - abs
+  url:
+    - append: ".html"
+  title: capitalize
+  up: ceil
+  price:
+    - default: 12.99
+variables:
+  labels:
+    products:
+      - map: label
+  tags:
+    products:
+      - map: tag
+      - compact
+      - map: capitalize
+  taggings:
+    tags:
+    - concat: labels
+  full_url:
+    url:
+      - append: ".html"
+  year:
+    created_at:
+      - date: "%Y"
+  half_price:
+    price:
+      - divided_by: 2
+  lower_title:
+    title: downcase
