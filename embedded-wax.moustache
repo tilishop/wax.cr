@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Waxed Moustache Example</title>
+</head>
+<body>
+  Hello {{name}}
+  You have just won {{value}} dollars!
+  {{#in_ca}}
+  Well, {{taxed_value}} dollars, after taxes.
+  {{/in_ca}}
+
+  <script type="application/wax+json">
+    {
+      "transform": {
+        "name": ["downcase", "capitalize"],
+        "pages": ["with_index"],
+        "pages": [{"with_index":1}, {"with_cycle":"odd,even"}]
+      },
+      "variables": {
+        "taxed_value": {
+          "value": {"times": 0.6}
+        },
+        "in_ca": {
+          "country": {"==": "CA"}
+        }
+      }
+    }
+  </script>
+</body>
+</html>
